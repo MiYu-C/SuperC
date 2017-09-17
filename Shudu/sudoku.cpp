@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
 		cout << "format error!" << endl;
 		return 0;
 	}
-	err=fopen_s(&fp,"out.txt", "w");
+	err=fopen_s(&fp,"sudoku.txt", "w");
 	int i, j;
 	for (i = 0;i<10;i++) {//初始化
 		for (j = 0;j<10;j++) {
