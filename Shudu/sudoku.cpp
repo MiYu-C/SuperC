@@ -8,10 +8,10 @@
 #include <fstream>
 using namespace std;
 
-char sudo[10][10];
-int hang[10][10];//行数组
-int lie[10][10];//列数组
-int gong[10][10];//宫数组
+char sudo[10][10];//数独数组
+int hang[10][10];//行标记数组
+int lie[10][10];//列标记数组
+int gong[10][10];//宫标记数组
 int max1 = 1;//已生成数组个数
 int min1 = 1;//要求生成的数组个数
 FILE *fp;
@@ -106,7 +106,11 @@ int main(int argc, char* argv[])
 			gong[i][j] = 0;
 		}
 	}
-	setsudo(0, 0);//开始生成数独
+	sudo[0][0] = '2';
+	hang[0][2] = 1;
+	lie[0][2] = 1;
+	gong[0][2] = 1;
+	setsudo(0, 1);//开始生成数独
 	return 0;
 }
 
