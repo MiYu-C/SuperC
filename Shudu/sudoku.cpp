@@ -81,7 +81,7 @@ void setsudo(int h, int l){//生成数独
 int main(int argc, char* argv[])
 {
 	min1 = 0;
-	if (argv[1][0] == '-'&&argv[1][1] == 'c' &&argc==3) {//判断命令格式是否正确
+	if (argv[1][0] == '-'&&argv[1][1] == 'c' /*&&argc==3*/) {//判断命令格式是否正确
 		for (int k = 0;argv[2][k] != '\0';k++) {
 			if (argv[2][k] <= '9'&&argv[2][k] >= '0') {//得到要求的数独个数
 				min1 = min1 * 10 + argv[2][k]-48;
@@ -96,7 +96,7 @@ int main(int argc, char* argv[])
 		cout << "format error!" << endl;
 		return 0;
 	}
-	err=fopen_s(&fp,"sudoku.txt", "w");
+	err=fopen_s(&fp,"./sudoku.txt", "w");
 	int i, j;
 	for (i = 0;i<10;i++) {//初始化
 		for (j = 0;j<10;j++) {
